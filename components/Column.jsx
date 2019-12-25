@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 
-export default ({ children, align, justify }) => {
+export const Column = ({ children, align, justify }) => {
     const alignStyles = {
         center: {
             alignItems: 'center',

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 
-export const Column = ({ children, align, justify }) => {
+export const Column = ({ children, align, justify, style = {}, ...rest }) => {
     const alignStyles = {
         center: {
             alignItems: 'center',
@@ -28,10 +28,11 @@ export const Column = ({ children, align, justify }) => {
         { display: 'flex', flexDirection: 'column' }, 
         align && alignStyles[align] ? alignStyles[align] : {},
         justify && justifyStyles[justify] ? justifyStyles[justify] : {},
+        style,
     );
 
     return (
-        <div style={style}>
+        <div style={style} {...rest}>
             {children}
         </div>
     )

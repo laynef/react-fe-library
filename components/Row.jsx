@@ -24,14 +24,14 @@ export const Row = ({ children, align, justify }) => {
             justifyContent: 'flex-end',
         },
     };
+    const style = Object.assign(
+        { display: 'flex', flexDirection: 'row' }, 
+        align && alignStyles[align] ? alignStyles[align] : {},
+        justify && justifyStyles[justify] ? justifyStyles[justify] : {},
+    );
 
     return (
-        <div style={{
-            display: 'flex',
-            flexDirection: 'row',
-            ...(align && alignStyles[align] ? alignStyles[align] : {}),
-            ...(justify && justifyStyles[justify] ? justifyStyles[justify] : {}),
-        }}>
+        <div style={style}>
             {children}
         </div>
     )

@@ -1,18 +1,19 @@
 import * as React from 'react';
 
 
+const directionalOptions = (key) => ({
+    center: {
+        [key]: 'center',
+    },
+    start: {
+        [key]: 'flex-start',
+    },
+    end: {
+        [key]: 'flex-end',
+    },
+});
+
 export const Row = ({ children, align, justify, style = {}, ...rest }) => {
-    const directionalOptions = (key) => ({
-        center: {
-            [key]: 'center',
-        },
-        start: {
-            [key]: 'flex-start',
-        },
-        end: {
-            [key]: 'flex-end',
-        },
-    });
     const justifyContentStyles = directionalOptions('justifyContent');
     const alignItemsStyles = directionalOptions('alignItems');
 

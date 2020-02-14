@@ -16,7 +16,7 @@ export const Column = ({ children, align, justify, style = {}, ...rest }) => {
     const justifyContentStyles = directionalOptions('justifyContent');
     const alignItemsStyles = directionalOptions('alignItems');
 
-    const style = Object.assign(
+    const styles = Object.assign(
         { display: 'flex', flexDirection: 'column' }, 
         align && alignItemsStyles[align] ? alignItemsStyles[align] : {},
         justify && justifyContentStyles[justify] ? justifyContentStyles[justify] : {},
@@ -24,7 +24,7 @@ export const Column = ({ children, align, justify, style = {}, ...rest }) => {
     );
 
     return (
-        <div style={style} {...rest}>
+        <div style={styles} {...rest}>
             {children}
         </div>
     )

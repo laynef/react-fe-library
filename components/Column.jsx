@@ -2,32 +2,24 @@ import * as React from 'react';
 
 
 export const Column = ({ children, align, justify, style = {}, ...rest }) => {
-    const alignStyles = {
+    const directionalOptions = (key) => ({
         center: {
-            alignItems: 'center',
+            [key]: 'center',
         },
         start: {
-            alignItems: 'flex-start',
+            [key]: 'flex-start',
         },
         end: {
-            alignItems: 'flex-end',
+            [key]: 'flex-end',
         },
-    };
-    const justifyStyles = {
-        center: {
-            justifyContent: 'center',
-        },
-        start: {
-            justifyContent: 'flex-start',
-        },
-        end: {
-            justifyContent: 'flex-end',
-        },
-    };
+    });
+    const justifyContentStyles = directionalOptions('justifyContent');
+    const alignItemsStyles = directionalOptions('alignItems');
+
     const style = Object.assign(
         { display: 'flex', flexDirection: 'column' }, 
-        align && alignStyles[align] ? alignStyles[align] : {},
-        justify && justifyStyles[justify] ? justifyStyles[justify] : {},
+        align && alignItemsStyles[align] ? alignItemsStyles[align] : {},
+        justify && justifyContentStyles[justify] ? justifyContentStyles[justify] : {},
         style,
     );
 

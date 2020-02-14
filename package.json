@@ -1,5 +1,5 @@
 {
-  "name": "ReactFELibrary",
+  "name": "react-fe-library",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "react": "^16.12.0"
+  "peerDependencies": {
+    "react": "^16.x.x",
+    "react-dom": "^16.x.x"
   }
 }

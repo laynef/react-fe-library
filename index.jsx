@@ -1,2 +1,2 @@
-export {Column} from './components/Column';
-export {Row} from './components/Row';
+export { Column } from './components/flex/Column';
+export { Row } from './components/flex/Row';
